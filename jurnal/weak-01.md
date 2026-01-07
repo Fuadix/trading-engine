@@ -1,6 +1,6 @@
 #Day 1   |
 ----------
-    saya belajar pola fikir seorang enginer yg perlu berfikir jangka panjang dalam perancangan dan pemgembangan,belajar mengerti penting nya jurnal dalam belajar dan pemgembangan agar tidak mengulangi kesalahan yg mirip apalagi sama,saya belajar bagaimana menyusun kerangka kode yg di mulai dengan pemisahan folder kode,data,dan biner,
+1. saya belajar pola fikir seorang enginer yg perlu berfikir jangka panjang dalam perancangan dan pemgembangan,belajar mengerti penting nya jurnal dalam belajar dan pemgembangan agar tidak mengulangi kesalahan yg mirip apalagi sama,saya belajar bagaimana menyusun kerangka kode yg di mulai dengan pemisahan folder kode,data,dan biner,
     saya memulai dasar penulisan kode cpp dan cmake
 
 
