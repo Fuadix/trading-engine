@@ -45,8 +45,19 @@ std::vector<Candle> readCSV(const std::string& filename){
 }
 
 
+int safeStartIndex(int dataSize,int window){
+	if (dataSize < window) return 0;
+	return dataSize - window;
+}
+
+void printLastCandles(const std::vector<Candle> &candles,int count){
+	int start = safeStartIndex(candles.size(),count);
+	for (int i = start;i < candles.size();i++){
+		std::cout << candles[i].time << " | " << candles[i].close << std::endl;
+	}
 
 
+}
 
 
 int main(){
@@ -57,5 +68,10 @@ int main(){
 		std::cout<<c.time<<" | " << c.open << " "<<c.high<<" "<<c.low<<" "<<c.close<<"\n";
 
 	}
+
+	int load;
+	std::cin >> load;
+	printLastCandles(candles,load);
+	
 	return 0;
 }
