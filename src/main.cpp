@@ -61,7 +61,7 @@ void printLastCandles(const std::vector<Candle> &candles,int count){
 
 
 int main(){
-	auto candles = readCSV("data/sample.csv");
+	auto candles = readCSV("~/trading-engine/data/sample.csv");
 	std::cout<<"jumlah candle :"<<candles.size()<<"\n";
 
 	for (const auto& c : candles){
