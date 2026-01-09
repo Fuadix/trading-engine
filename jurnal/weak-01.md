@@ -65,14 +65,16 @@ getline(cin,data);
 1. salah satu kapan kita harus menggunakan dereference (&)dalam argument fungsi adalah untuk menghindari copy paste data yg sama,ini lebih efisien dalam memory dan menghindari program crash saat berjalan
 
 ```cpp
-                                                                  int funtion_read_data(const int& number){                                  //function running                                            }
+int funtion_read_data(const int& number){
+//function running               
+}
 ```
 2. dan disarankan untuk menambahkan "const" agar data asli tidak ada perubahan yg tidak di inginkan dalam data,karna dereference sendiri untuk merubah data melaui fungsi
 
 ```cpp
 
   
-int funtion_change_data(const int number){
+int funtion_change_data(int& number){
     //function berjalan untuk merubah data langsung ke varible asli
 }
 
