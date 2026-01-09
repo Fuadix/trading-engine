@@ -66,7 +66,7 @@ getline(cin,data);
 
 ```cpp
                                                                   int funtion_read_data(const int& number){                                  //function running                                            }
-
+```
 2. dan disarankan untuk menambahkan "const" agar data asli tidak ada perubahan yg tidak di inginkan dalam data,karna dereference sendiri untuk merubah data melaui fungsi
 
 ```cpp
