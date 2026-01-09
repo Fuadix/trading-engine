@@ -39,7 +39,7 @@ dimana loop adalah soal waktu,sedangkan fungsi adalah otak,ini berarti fungsi ti
 
 ## insight
 1. stream adalah sebuah mekanisme abstraksi agar data bisa masuk dan keluar secara teratur tampa perlu di kendalikan oleh program seperti contoh cin yg memasukan data kedalam variable dengan mengambil data dari keyboard,dan getline()dimana untuk mengambil sumber dari arg 1 untuk di keluarkan dalam bentuk data yg disimpan di arg2
-``cpp
+```cpp
 getline(cin,data);
 //ini untuk mengambil string dari cin
 ```
