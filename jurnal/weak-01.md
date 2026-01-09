@@ -14,9 +14,10 @@ ________________________________________________________
  3. kode main.cpp harus ringkas dan tidak berbelit2 
 
 ______________________________________________________
+```
 # Error yg ditemui:
 1.saya melakukan kesalah sytax dasar di cmake dan main.cpp
-
+```
 
 
 
@@ -38,10 +39,44 @@ dimana loop adalah soal waktu,sedangkan fungsi adalah otak,ini berarti fungsi ti
 
 ## insight
 1. stream adalah sebuah mekanisme abstraksi agar data bisa masuk dan keluar secara teratur tampa perlu di kendalikan oleh program seperti contoh cin yg memasukan data kedalam variable dengan mengambil data dari keyboard,dan getline()dimana untuk mengambil sumber dari arg 1 untuk di keluarkan dalam bentuk data yg disimpan di arg2
+``cpp
+getline(cin,data);
+//ini untuk mengambil string dari cin
+```
+
 
 2.stream memiliki state internal(kursor) sehingga getline() akan membaca data lanjutan dari posisi terakhir di setiap pemanggilan nya
 
 3.kita perlu method  push_back(<element vector>)untuk menambahkan data sebagai element baru vector
 
 
+# DAY 4|
+--------
+
+
+1. saya mempelajari metode window,dimana window penting agar program bisa berjalan lebih efisien dan dan presisi
+
+2.window adalah sebuah mekanisme mengambil beberapa element terahir untuk diambil oleh program
+
+
+
+## **insight** :
+
+1. salah satu kapan kita harus menggunakan dereference (&)dalam argument fungsi adalah untuk menghindari copy paste data yg sama,ini lebih efisien dalam memory dan menghindari program crash saat berjalan
+
+```cpp
+                                                                  int funtion_read_data(const int& number){                                  //function running                                            }
+
+2. dan disarankan untuk menambahkan "const" agar data asli tidak ada perubahan yg tidak di inginkan dalam data,karna dereference sendiri untuk merubah data melaui fungsi
+
+```cpp
+
+  
+int funtion_change_data(const int number){
+    //function berjalan untuk merubah data langsung ke varible asli
+}
+
+```
+
+3. sedangkan dalam pointer saat kita mengizinkan ada data kosong yg nanti akan di isi dengan Nullptr oleh system default
 
