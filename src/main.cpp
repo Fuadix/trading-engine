@@ -1,8 +1,8 @@
-#include <iostream>
+
 #include <vector>
 #include <fstream>
 #include <sstream>
-
+#include <iostream>
  
 struct Candle{
 	std::string time;
@@ -55,13 +55,39 @@ void printLastCandles(const std::vector<Candle> &candles,int count){
 	for (int i = start;i < candles.size();i++){
 		std::cout << candles[i].time << " | " << candles[i].close << std::endl;
 	}
-
-
 }
 
 
+double highesthigh(const std::vector<Candle>& candles,const int& window){
+
+  int start = (candles.size()<window)?0:candles.size()-window;
+  double max = candles[start].high;
+  for(int i = start; i < candles.size(); i++){
+    if (candles[i].high > max){
+      max = candles[i].high;
+    }
+  }
+  return max;
+}
+
+
+double lowestlow(const std::vector<Candle>& candles,const int& window){
+  int start = (candles.size()<window)?0:candles.size()-window;
+  double min = candles[start].low;
+  for(int i = start;i<candles.size();i++){
+    if (candles[i].low < min){
+      min = candles[i].low;
+    }
+  }
+  return min;
+}
+
+
+double marketRange(const std::vector<Candle>& candles,int &windows){
+  return highesthigh(candles,windows)-lowestlow(candles,windows);
+}
 int main(){
-	auto candles = readCSV("~/trading-engine/data/sample.csv");
+	auto candles = readCSV("data/sample.csv");
 	std::cout<<"jumlah candle :"<<candles.size()<<"\n";
 
 	for (const auto& c : candles){
@@ -70,8 +96,15 @@ int main(){
 	}
 
 	int load;
+  std::cout << "input range analyzing: ";
 	std::cin >> load;
 	printLastCandles(candles,load);
+  double low = lowestlow(candles,load);
+  double max = highesthigh(candles,load);
+  std::cout<<"lower low is :" << low <<std::endl;
+  std::cout<<"higher high is:" << max << std::endl;
+  std::cout<<"range of market is: "<< marketRange(candles,load)*10000<<"pips"<< std::endl;
+  
 	
 	return 0;
 }
