@@ -105,7 +105,7 @@ int funtion_change_data(int& number){
 
 ### kasus parsing data csv dengan getline()
 
-[A] Masalah header CSV dan data isi CSV yg mesti dipisahkan
+[] Masalah header CSV dan data isi CSV yg mesti dipisahkan
 
     dalam kasus pemisahan header,sebelumnya saya paham bahwa untuk parsing csv di c++ kita memerlukan looping namun masalahnya jika data itu berupa integer atau bilangan decimal tentu bagi saya sebagai pemula kebingungan dalam menanhani header yg berupa string dan dapat mengakibatkan crash pada progaram,maka dari itu saya perlu memanggil getline() di luar looping untuk khusus menyimpan header file csv:
 ``` cpp
@@ -120,9 +120,9 @@ int funtion_change_data(int& number){
 ```
 
 
-[B] Solusi Agar Program Mampu Bisa Menangani File yg Memiliki Header atau Tidak
+[] Solusi Agar Program Mampu Bisa Menangani File yg Memiliki Header atau Tidak
 
-    Solusi agar program dapat menangani file data yg memiliki header atau tidak dengan menggunakan try di dalam looping
+Solusi agar program dapat menangani file data yg memiliki header atau tidak dengan menggunakan try di dalam looping
     jelasnya seperti perulangan ini:
 ```cpp
     while(getline(file,line)){
