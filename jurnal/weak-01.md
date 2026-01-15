@@ -76,9 +76,75 @@ int funtion_read_data(const int& number){
   
 int funtion_change_data(int& number){
     //function berjalan untuk merubah data langsung ke varible asli
-}
+
 
 ```
 
 3. sedangkan dalam pointer saat kita mengizinkan ada data kosong yg nanti akan di isi dengan Nullptr oleh system default
+
+# DAY 5 & 6 |
+-------------
+
+
+1. saya membuat logika menghitung range, swing high,swing low market,
+
+2. saya juga belaja penting nya memastikan agar program tetap hidup dam terhindar dari crash
+
+## insight :
+
+1. program yg mengalami crash lebih berbahaya dari pada Error sytax dan Error yg terkendali
+
+2. enginer berfikir agar program bisa tetap hidup saat erro terjadi,bukan agar program terhindar dari error
+
+3. maka dari itu enginer penting memahami guard clause
+
+# DAY 7 |
+---------
+
+## insight :
+
+### kasus parsing data csv dengan getline()
+
+A. Masalah header CSV dan data isi CSV yg mesti dipisahkan
+
+    dalam kasus pemisahan header,sebelumnya saya paham bahwa untuk parsing csv di c++ kita memerlukan looping namun masalahnya jika data itu berupa integer atau bilangan decimal tentu bagi saya sebagai pemula kebingungan dalam menanhani header yg berupa string dan dapat mengakibatkan crash pada progaram,maka dari itu saya perlu memanggil getline() di luar looping untuk khusus menyimpan header file csv:
+
+    ''' cpp
+    void CSVRead(const std::string& file name){
+        std::ifstream file(file name);
+        std::string line;
+
+        getline(file,line);//untuk header
+        while(getline(line,file){
+            //looping logika parsing
+        }
+    '''
+
+
+B. Solusi Agar Program Mampu Bisa Menangani File yg Memiliki Header atau Tidak
+
+    Solusi agar program dapat menangani file data yg memiliki header atau tidak dengan menggunakan try di dalam looping
+    jelasnya seperti perulangan ini:
+
+    '''cpp
+    while(getline(file,line)){
+        std::stringstream ss(line)
+        std::string temp;
+        Data data;//untuk parsing csv ke struct
+        try{
+
+            if(!getline(ss,temp,',') continue;
+            data.h1 = temp;
+            //dan logika seterusnya
+        }
+        catch{
+            // logika jika file rusak
+            continue
+        }
+    }
+    '''
+
+
+
+
 

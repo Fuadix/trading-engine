@@ -1,5 +1,10 @@
 cmake_minimum_required(VERSION 3.10)
 project(trading_engine)
-set(CMAKE_CXX_STANDARD 17)
-add_executable(engine src/main.cpp)
 
+set(CMAKE_CXX_STANDARD 17)
+
+file(GLOB_RECURSE SOURCES
+    src/*.cpp
+)
+
+add_executable(engine ${SOURCES})
