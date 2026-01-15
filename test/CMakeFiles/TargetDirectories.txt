@@ -1,3 +1,0 @@
-/data/data/com.termux/files/home/trading-engine/test/CMakeFiles/engine.dir
-/data/data/com.termux/files/home/trading-engine/test/CMakeFiles/edit_cache.dir
-/data/data/com.termux/files/home/trading-engine/test/CMakeFiles/rebuild_cache.dir
